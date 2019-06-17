@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { GalleryComponent } from './client/gallery/gallery.component';
 import { DetailComponent } from './client/detail/detail.component';
 import { ListComponent } from './client/list/list.component';
+import { HeaderComponent } from './core/header/header.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GalleryComponent,
     DetailComponent,
-    ListComponent
+    ListComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
