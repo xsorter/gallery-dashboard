@@ -4,11 +4,15 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GalleryComponent } from './client/gallery/gallery.component';
+import { DetailComponent } from './client/detail/detail.component';
+import { ListComponent } from './client/list/list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GalleryComponent
+    GalleryComponent,
+    DetailComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
