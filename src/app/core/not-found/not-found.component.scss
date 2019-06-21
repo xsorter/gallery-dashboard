@@ -1,0 +1,17 @@
+.error{
+  &__title{
+    text-align: center;
+    font-size: 48px;
+    color: #4a4a4a;
+    padding: 30px;
+  }
+  &__body{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    color: #666;
+  }
+  &__numbers{
+    font-size: 200px;
+  }
+}
