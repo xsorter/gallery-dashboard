@@ -1,3 +1,14 @@
-<p>
-  header works!
-</p>
+<header>
+  <div class="heaer__wrapper">
+    <div class="header__menu">
+      <ul>
+        <li routerLinkActive="link__active" [routerLinkActiveOptions]="{exact: true}">
+          <a [routerLink]="['/']">home</a>
+        </li>
+        <li routerLinkActive="link__active">
+          <a [routerLink]="['/list']">list</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</header>
