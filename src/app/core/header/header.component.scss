@@ -1,4 +1,10 @@
 
+.header{
+  &__wrapper{
+    background: green;
+  }
+}
+
 .link{
   &__active{
     a{

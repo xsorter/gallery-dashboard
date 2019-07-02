@@ -11,6 +11,9 @@ import { FooterComponent } from './core/footer/footer.component';
 import { HomeComponent } from './client/home/home.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedMaterialModule } from './material.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,9 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    SharedMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
