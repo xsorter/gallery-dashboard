@@ -13,6 +13,7 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedMaterialModule } from './material.module';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { SharedMaterialModule } from './material.module';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
