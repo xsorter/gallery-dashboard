@@ -1,9 +1,13 @@
 <header>
-  <div class="header__wrapper mat-elevation-z6">
+  <div [ngClass]="router.url === '/admin' ? 'header__wrapper-admin' : '' " 
+       class="header__wrapper mat-elevation-z6">
     <nav class="header__menu">
       <ul>
         <li routerLinkActive="link__active" [routerLinkActiveOptions]="{exact: true}">
           <a [routerLink]="['/']">home</a>
+        </li>
+        <li routerLinkActive="link__active">
+          <a [routerLink]="['/admin']">admin</a>
         </li>
         <li routerLinkActive="link__active">
           <a [routerLink]="['/list']">list</a>

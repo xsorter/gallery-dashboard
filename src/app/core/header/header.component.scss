@@ -3,6 +3,9 @@
 .header{
   &__wrapper{
     background: var(--base-color);
+    &-admin{
+      background: var(--admin-color);
+    }
   }
   &__menu{
     padding: 10px 18px;
