@@ -14,6 +14,7 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedMaterialModule } from './material.module';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedMaterialModule
+    SharedMaterialModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
