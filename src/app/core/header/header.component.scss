@@ -9,13 +9,24 @@
   }
   &__menu{
     padding: 10px 18px;
+    &-navigation{
+      display: flex;
+    }
+    &-item{
+      margin-right: 10px;
+      text-transform: uppercase;
+      a{
+        text-decoration: none;
+        color: var(--header-font-main);
+      }
+    }
   }
 }
 
 .link{
   &__active{
     a{
-      color: red;
+      color: var(--header-font-active);
     }
   }
 }
