@@ -1,3 +1,11 @@
+@import './../../../variables.scss';
+
 .mat-drawer-container{
   background: transparent;
+}
+
+.container{
+  &__admin{
+    max-width: 100%;
+  }
 }
