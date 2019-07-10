@@ -209,11 +209,26 @@ body {
 
 * {
   font-family: Roboto, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
 }
 
 html, body{ 
   height: 100%; 
   margin: 0; 
+}
+
+h1, h2, h3{
+  font-family: 'EB Garamond', serif;
+}
+
+h1{
+  font-size: 46px;
+}
+
+h2{
+  font-size: 34px;
+  font-weight: 700;
 }
 
 app-root{
