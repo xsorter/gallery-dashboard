@@ -26,7 +26,7 @@ import { AdminModule } from './admin/admin.module';
     FooterComponent,
     HomeComponent,
     NotFoundComponent,
-    DashboardComponent
+    DashboardComponent,
   ],
   imports: [
     BrowserModule,

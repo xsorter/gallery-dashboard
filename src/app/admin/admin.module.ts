@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
+import { SharedMaterialModule } from '../material.module';
 
 
 @NgModule({
-  declarations: [
-
-  ],
   imports: [
+    SharedMaterialModule,
+  ],
+  declarations: [
     
-  ]
+  ],
+  exports: [
+    
+  ],
+  
 })
 
 
