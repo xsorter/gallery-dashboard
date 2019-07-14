@@ -16,3 +16,9 @@ footer{
     font-size: 12px;
   }
 }
+
+.container{
+  &__footer{
+    display: block;
+  }
+}
