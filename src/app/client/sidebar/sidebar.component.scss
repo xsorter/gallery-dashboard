@@ -1,0 +1,16 @@
+.sidebar{
+  &__right{
+    max-width: 250px;
+    width: 100%;
+    background: red;
+    position: sticky;
+    top: 55px;
+    //height: calc(100vh - 55px);
+    margin-bottom: 15px;
+  }
+  &__box{
+    background: green;
+    //margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}

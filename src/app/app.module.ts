@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedMaterialModule } from './material.module';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminModule } from './admin/admin.module';
+import { SidebarComponent } from './client/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AdminModule } from './admin/admin.module';
     HomeComponent,
     NotFoundComponent,
     DashboardComponent,
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
