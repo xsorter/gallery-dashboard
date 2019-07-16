@@ -58,11 +58,13 @@ body {
 }
 
 .content{
-  margin-top: 35px;
+  margin-top: 31px;
   &__main{
     max-width: 930px;
+    margin-top: 15px;
     margin-right: 15px;
     width: 100%;
+    background: #41a3ff;
   }
 }
 
