@@ -16,6 +16,7 @@ import { SharedMaterialModule } from './material.module';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminModule } from './admin/admin.module';
 import { SidebarComponent } from './client/sidebar/sidebar.component';
+import { DataStorageService } from './shared/data-storage.service';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SidebarComponent } from './client/sidebar/sidebar.component';
     NotFoundComponent,
     DashboardComponent,
     SidebarComponent,
+    DataStorageService
   ],
   imports: [
     BrowserModule,
