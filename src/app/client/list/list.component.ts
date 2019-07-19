@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
 
 @Component({
   selector: 'app-list',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService: DataStorageService ) { }
+
+  articles = this.dataService.getData();
 
   ngOnInit() {
+    console.log('Articles: ',this.articles);
   }
 
 }

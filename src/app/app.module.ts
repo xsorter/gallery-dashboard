@@ -30,7 +30,6 @@ import { DataStorageService } from './shared/data-storage.service';
     NotFoundComponent,
     DashboardComponent,
     SidebarComponent,
-    DataStorageService
   ],
   imports: [
     BrowserModule,
@@ -39,7 +38,7 @@ import { DataStorageService } from './shared/data-storage.service';
     SharedMaterialModule,
     AdminModule
   ],
-  providers: [],
+  providers: [DataStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
