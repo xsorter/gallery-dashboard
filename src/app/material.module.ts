@@ -1,4 +1,4 @@
-import {MatButtonModule, MatCheckboxModule, MatSidenavModule, MatFormFieldModule, MatInputModule, MatSelectModule} from '@angular/material';
+import {MatButtonModule, MatCheckboxModule, MatSidenavModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule} from '@angular/material';
 import { NgModule } from '@angular/core';
 
 @NgModule({
@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatCardModule
   ],
   exports: [
     MatButtonModule, 
@@ -17,6 +18,7 @@ import { NgModule } from '@angular/core';
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatCardModule
   ],
 })
 export class SharedMaterialModule { }
