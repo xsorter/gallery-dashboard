@@ -1,3 +1,8 @@
+.mat-card-image{
+  object-fit: cover;
+  max-height: 400px;
+}
+
 .content{
   &__list{
     &-item{
