@@ -4,11 +4,8 @@
             <ul class="content__list">
                 <li class="content__list-item" *ngFor="let article of articles">
                     <mat-card class="example-card">
-                        <mat-card-header>
-                            <div mat-card-avatar class="example-header-image"></div>
-                            <mat-card-title>{{article.title}}</mat-card-title>
-                            <mat-card-subtitle>subtitle</mat-card-subtitle>
-                        </mat-card-header>
+                        <mat-card-title><h2>{{article.title}}</h2></mat-card-title>
+                        <mat-card-subtitle>subtitle</mat-card-subtitle>
                         <mat-card-content>
                             <p>
                                 {{article.description}}
