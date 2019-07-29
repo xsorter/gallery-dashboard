@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ɵConsole } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { Article } from 'src/app/shared/article.model';
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private dataService: DataStorageService) { }
+
+  article: Article;
 
   ngOnInit() {
+    this.route.params.subscribe(
+      (data) => {
+        this.article = this.dataService.getArticle(data.id)
+      }
+    )
   }
 
 }

@@ -12,6 +12,10 @@ export class DataStorageService {
   constructor(){}
 
   getData(){
-    return this.articles
+    return this.articles.slice()
+  }
+
+  getArticle(index: number){
+    return this.articles[index]
   }
 }
