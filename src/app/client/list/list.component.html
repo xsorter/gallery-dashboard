@@ -4,22 +4,24 @@
             <ul class="content__list">
                 <li class="content__list-item" *ngFor="let article of articles; let i = index">
                     <mat-card class="example-card">
-                        <mat-card-title>
-                            <h2>
-                                <a [routerLink]='[i]'>{{article.title}}</a> 
-                            </h2>
-                        </mat-card-title>
-                        <mat-card-subtitle>subtitle</mat-card-subtitle>
-                        <mat-card-content>
-                            <p>
-                                {{article.description}}
-                            </p>
-                        </mat-card-content>
-                        <img
-                            mat-card-image
-                            src="{{article.coverPath}}"
-                            alt="Photo of a Shiba Inu"
-                        >
+                        <a class="link__hidden" [routerLink]='[i]'>
+                            <mat-card-title>
+                                <h2>
+                                    {{article.title}}
+                                </h2>
+                            </mat-card-title>
+                            <mat-card-subtitle>subtitle</mat-card-subtitle>
+                            <mat-card-content>
+                                <p>
+                                    {{article.description}}
+                                </p>
+                            </mat-card-content>
+                            <img
+                                mat-card-image
+                                src="{{article.coverPath}}"
+                                alt="Photo of a Shiba Inu"
+                            >
+                        </a> 
                         
                         <mat-card-actions>
                             <button mat-button>LIKE</button>

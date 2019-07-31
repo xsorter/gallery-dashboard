@@ -240,15 +240,21 @@ h2{
   font-weight: 700;
 }
 
+/*links*/
+.link{
+  &__hidden{
+    text-decoration: none;
+    color: unset;
+  }
+}
+
+
+
 app-root{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
-
-
-
-
 
 
 
