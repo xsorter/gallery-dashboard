@@ -1,14 +1,16 @@
-
 <section class="detail">
-  <div class="container container__detail">
-    <h2>
-      {{article.title}}
-    </h2>
-    <img class="detail__cover" src="{{article.coverPath}}" alt="{{article.title}}">
-    <div>
-      {{article.description}}
+    <div class="container container__detail">
+        <div class="detail__text">
+            <h2>{{article.title}}</h2>
+        </div>
+        <img
+            class="detail__cover"
+            src="{{article.coverPath}}"
+            alt="{{article.title}}"
+        >
+        <div class="detail__text">
+            <div>{{article.description}}</div>
+        </div>
+        <app-gallery></app-gallery>
     </div>
-    <app-gallery></app-gallery>
-  </div>
 </section>
-
