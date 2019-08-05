@@ -15,26 +15,25 @@
     &-item{
       margin-right: 10px;
       text-transform: uppercase;
-      a{
-        text-decoration: none;
-        color: var(--header-font-main);
-        opacity: 0.5;
-        font-weight: 700;
-        font-size: 18px;
-        transition: opacity ease-out 0.2s;
-        will-change: opacity;
-        &:hover{
-          opacity: 1;
-        }
-      }
     }
   }
-}
-
-.link{
-  &__active{
-    a{
+  &__link{
+    text-decoration: none;
+    color: var(--header-font-main);
+    opacity: 0.5;
+    font-weight: 700;
+    font-size: 18px;
+    transition: opacity ease-out 0.2s;
+    will-change: opacity;
+    &:hover{
+      opacity: 1;
+    }
+    &-admin{
+      color: var(--link-light);
+    }
+    &-active{
       color: var(--header-font-active);
     }
   }
 }
+
