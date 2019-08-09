@@ -11,8 +11,7 @@ import { MenuComponent } from './menu/menu.component';
   imports: [
     BrowserModule,
     SharedMaterialModule,
-    FormsModule,
-    //ReactiveFormsModule
+    ReactiveFormsModule
   ],
   declarations: [
     AddPostComponent, 

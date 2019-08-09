@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-post',
@@ -9,6 +10,8 @@ export class AddPostComponent implements OnInit {
 
   constructor() { }
 
+  postForm: FormGroup;
+
   example = [
     {value: '1', viewValue: '1'},
     {value: '2', viewValue: '2'},
@@ -16,10 +19,23 @@ export class AddPostComponent implements OnInit {
   ];
 
   ngOnInit() {
+    this.initForm()
   }
 
-  onSubmit(value: {title: string}){
-    console.log(value)
+  onSubmit(){
+    console.log(this.postForm.value)
+  }
+
+  private initForm(){
+    let title = '';
+    let text = '';
+    let select = '';
+
+    this.postForm = new FormGroup({
+      'title': new FormControl(title, Validators.required),
+      'text': new FormControl(text, Validators.required),
+      'select': new FormControl(select, Validators.required)
+    })
   }
 
 }

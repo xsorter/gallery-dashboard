@@ -1,31 +1,29 @@
 <form
-  #postForm="ngForm"
-  (ngSubmit)="onSubmit(postForm.value)"
+  (ngSubmit)="onSubmit()"
   class="example-form"
+  [formGroup]="postForm"
 >
   <mat-form-field class="example-full-width">
     <input
       matInput
       placeholder="Example input"
-      value="name"
       name="title"
-      ngModel
+      formControlName="title"
     >
   </mat-form-field>
   <mat-form-field class="example-full-width">
     <textarea
       matInput
       placeholder="Example textarea"
-      value="text"
       name="text"
-      ngModel
+      formControlName="text"
     ></textarea>
   </mat-form-field>
   <mat-form-field>
     <mat-label>Select example</mat-label>
     <mat-select
-      ngModel
       name="select"
+      formControlName="select"
     >
       <mat-option
         *ngFor="let val of example"
