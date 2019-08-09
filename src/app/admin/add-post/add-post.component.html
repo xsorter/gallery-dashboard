@@ -1,0 +1,34 @@
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+            <input
+                matInput
+                placeholder="Example input"
+                value="value"
+            >
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <textarea
+                matInput
+                placeholder="Example textarea"
+            ></textarea>
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Select example</mat-label>
+            <mat-select>
+                <mat-option
+                    *ngFor="let val of example"
+                    [value]="val.value"
+                >
+                    {{val.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <button
+            mat-raised-button
+            color="accent"
+        >
+            Submit
+        </button>
+    </form>
+

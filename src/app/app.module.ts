@@ -13,7 +13,6 @@ import { NotFoundComponent } from './core/not-found/not-found.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedMaterialModule } from './material.module';
-import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminModule } from './admin/admin.module';
 import { SidebarComponent } from './client/sidebar/sidebar.component';
 import { DataStorageService } from './shared/data-storage.service';
@@ -28,7 +27,6 @@ import { DataStorageService } from './shared/data-storage.service';
     FooterComponent,
     HomeComponent,
     NotFoundComponent,
-    DashboardComponent,
     SidebarComponent,
   ],
   imports: [
