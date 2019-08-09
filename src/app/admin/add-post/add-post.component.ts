@@ -14,8 +14,12 @@ export class AddPostComponent implements OnInit {
     {value: '2', viewValue: '2'},
     {value: '3', viewValue: '3'}
   ];
-  
+
   ngOnInit() {
+  }
+
+  onSubmit(value: {title: string}){
+    console.log(value)
   }
 
 }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedMaterialModule } from '../material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AddPostComponent } from './add-post/add-post.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -10,6 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     BrowserModule,
     SharedMaterialModule,
+    FormsModule,
     //ReactiveFormsModule
   ],
   declarations: [
