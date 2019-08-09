@@ -4,6 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AddPostComponent } from './add-post/add-post.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -15,7 +16,7 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   declarations: [
     AddPostComponent, 
-    DashboardComponent
+    DashboardComponent, MenuComponent
   ],
   exports: [],
 

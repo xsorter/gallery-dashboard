@@ -1,44 +1,44 @@
 <form
-    #postForm="ngForm"
-    (ngSubmit)="onSubmit(postForm.value)"
-    class="example-form"
+  #postForm="ngForm"
+  (ngSubmit)="onSubmit(postForm.value)"
+  class="example-form"
 >
-    <mat-form-field class="example-full-width">
-        <input
-            matInput
-            placeholder="Example input"
-            value="name"
-            name="title"
-            ngModel
-        >
-    </mat-form-field>
-    <mat-form-field class="example-full-width">
-        <textarea
-            matInput
-            placeholder="Example textarea"
-            value="text"
-            name="text"
-            ngModel
-        ></textarea>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Select example</mat-label>
-        <mat-select
-            ngModel
-            name="select"
-        >
-            <mat-option
-                *ngFor="let val of example"
-                [value]="val.value"
-            >
-                {{val.viewValue}}
-            </mat-option>
-        </mat-select>
-    </mat-form-field>
-    <button
-        mat-raised-button
-        color="accent"
+  <mat-form-field class="example-full-width">
+    <input
+      matInput
+      placeholder="Example input"
+      value="name"
+      name="title"
+      ngModel
     >
-        Submit
-    </button>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea
+      matInput
+      placeholder="Example textarea"
+      value="text"
+      name="text"
+      ngModel
+    ></textarea>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select example</mat-label>
+    <mat-select
+      ngModel
+      name="select"
+    >
+      <mat-option
+        *ngFor="let val of example"
+        [value]="val.value"
+      >
+        {{val.viewValue}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button
+    mat-raised-button
+    color="accent"
+  >
+    Submit
+  </button>
 </form>

@@ -1,20 +1,19 @@
 <section class="dashboard">
-    <div class="content">
-        <mat-sidenav-container class="example-container">
-            <mat-sidenav
-                mode="side"
-                fixedInViewport="true"
-                opened
-            >
-                Sidenav content
-            </mat-sidenav>
-           
-            <mat-sidenav-content>
-                <div class="container container__admin">
-                  <app-add-post></app-add-post>
-                </div>
-                
-            </mat-sidenav-content>
-        </mat-sidenav-container>
-    </div>
+  <div class="content">
+    <mat-sidenav-container class="example-container">
+      <mat-sidenav
+      autosize 
+        mode="side"
+        fixedInViewport="true"
+        opened
+      >
+        <app-menu></app-menu>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <div class="container container__admin">
+          <app-add-post></app-add-post>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
 </section>
