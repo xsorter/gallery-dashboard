@@ -3,23 +3,25 @@ import { SharedMaterialModule } from '../material.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AddPostComponent } from './add-post/add-post.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { MenuComponent } from './menu/menu.component';
-
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { AdminRoutingModule } from './admin-routing.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
-  imports: [
-    BrowserModule,
-    SharedMaterialModule,
-    ReactiveFormsModule
-  ],
   declarations: [
     AddPostComponent, 
-    DashboardComponent, MenuComponent
+    DashboardComponent, 
+    MenuComponent, 
+    AdminHomeComponent
+  ],
+  imports: [
+    CommonModule,
+    AdminRoutingModule,
+    SharedMaterialModule,
+    ReactiveFormsModule,
   ],
   exports: [],
-
 })
-
 
 export class AdminModule {}

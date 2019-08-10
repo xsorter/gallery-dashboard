@@ -1,50 +1,50 @@
 <header>
-    <div
-        [ngClass]="router.url === '/admin' ? 'header__wrapper-admin' : '' "
-        class="header__wrapper mat-elevation-z6"
-    >
-        <nav class="header__menu">
-            <ul class="header__menu-navigation">
-                <li class="header__menu-item">
-                    <a
-                        class="header__link"
-                        routerLinkActive="header__link-active"
-                        [routerLinkActiveOptions]="{exact: true}"
-                        [ngClass]="router.url === '/admin' ? 'header__link-admin' : '' "
-                        [routerLink]="['/']"
-                    >
-                        home
-                    </a>
-                </li>
-                <li
-                    class="header__menu-item"
-                    routerLinkActive="link__active"
-                >
-                    <a
-                        routerLinkActive="header__link-active"
-                        [routerLinkActiveOptions]="{exact: true}"
-                        class="header__link"
-                        [ngClass]="router.url === '/admin' ? 'header__link-admin' : '' "
-                        [routerLink]="['/admin']"
-                    >
-                        admin
-                    </a>
-                </li>
-                <li
-                    class="header__menu-item"
-                    routerLinkActive="link__active"
-                >
-                    <a
-                        routerLinkActive="header__link-active"
-                        [routerLinkActiveOptions]="{exact: true}"
-                        class="header__link"
-                        [ngClass]="router.url === '/admin' ? 'header__link-admin' : '' "
-                        [routerLink]="['/list']"
-                    >
-                        list
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+  <div
+    [ngClass]="childRoute === 'admin' ? 'header__wrapper-admin' : '' "
+    class="header__wrapper mat-elevation-z6"
+  >
+    <nav class="header__menu">
+      <ul class="header__menu-navigation">
+        <li class="header__menu-item">
+          <a
+            class="header__link"
+            routerLinkActive="header__link-active"
+            [routerLinkActiveOptions]="{exact: true}"
+            [ngClass]="childRoute === 'admin' ? 'header__link-admin' : '' "
+            [routerLink]="['/']"
+          >
+            home
+          </a>
+        </li>
+        <li
+          class="header__menu-item"
+          routerLinkActive="link__active"
+        >
+          <a
+            routerLinkActive="header__link-active"
+            [routerLinkActiveOptions]="{exact: false}"
+            class="header__link"
+            [ngClass]="childRoute === 'admin' ? 'header__link-admin' : '' "
+            [routerLink]="['/admin']"
+          >
+            admin
+          </a>
+        </li>
+        <li
+          class="header__menu-item"
+          routerLinkActive="link__active"
+        >
+          <a
+            routerLinkActive="header__link-active"
+            [routerLinkActiveOptions]="{exact: false}"
+            class="header__link"
+            [ngClass]="childRoute === 'admin' ? 'header__link-admin' : '' "
+            [routerLink]="['/list']"
+          >
+            list
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
 </header>
