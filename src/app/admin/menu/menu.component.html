@@ -1,3 +1,23 @@
-<p>
-  Sidenav content
-</p>
+<aside class="menu">
+  <ul>
+    <li>
+      <a
+        class="menu__link"
+        [routerLink]="['/admin']"
+        routerLinkActive="menu__link-active"
+        [routerLinkActiveOptions]="{exact: true}"
+      >
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a
+        class="menu__link"
+        [routerLink]="['add']"
+        routerLinkActive="menu__link-active"
+      >
+        Add article
+      </a>
+    </li>
+  </ul>
+</aside>
