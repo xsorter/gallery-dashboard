@@ -1,6 +1,6 @@
 <aside class="menu">
   <ul>
-    <li>
+    <li routerLinkActive="menu__item-active" [routerLinkActiveOptions]="{exact: true}" class="menu__item">
       <a
         class="menu__link"
         [routerLink]="['/admin']"
@@ -10,7 +10,7 @@
         Dashboard
       </a>
     </li>
-    <li>
+    <li routerLinkActive="menu__item-active" class="menu__item">
       <a
         class="menu__link"
         [routerLink]="['add']"

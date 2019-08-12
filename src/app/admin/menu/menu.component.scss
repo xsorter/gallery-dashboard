@@ -2,6 +2,15 @@
 
 .menu{
   padding: 50px 10px 10px 10px;
+  &__item{
+    margin-left: -10px;
+    margin-right: -10px;
+    padding: 5px 10px;
+    transition: all ease-out 0.2s;
+    &-active{
+      background: var(--admin-item-active);
+    }
+  }
   &__link{
     color: var(--link-light);
     opacity: 0.7;
@@ -12,7 +21,7 @@
       opacity: 1;
     }
     &-active{
-      color: var(--admin-font-active);
+      opacity: 1;
     }
   }
 }
