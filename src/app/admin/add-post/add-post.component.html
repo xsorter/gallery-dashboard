@@ -1,42 +1,44 @@
-<form
-  (ngSubmit)="onSubmit()"
-  class="example-form"
-  [formGroup]="postForm"
->
-  <mat-form-field class="example-full-width">
-    <input
-      matInput
-      placeholder="Example input"
-      name="title"
-      formControlName="title"
-    >
-  </mat-form-field>
-  <mat-form-field class="example-full-width">
-    <textarea
-      matInput
-      placeholder="Example textarea"
-      name="text"
-      formControlName="text"
-    ></textarea>
-  </mat-form-field>
-  <mat-form-field>    
-    <mat-label>Select example</mat-label>
-    <mat-select
-      name="select"
-      formControlName="select"
-    >
-      <mat-option
-        *ngFor="let val of example"
-        [value]="val.value"
-      >
-        {{val.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <button
-    mat-raised-button
-    color="accent"
+<div class="admin__post">
+  <form
+    (ngSubmit)="onSubmit()"
+    class="example-form"
+    [formGroup]="postForm"
   >
-    Submit
-  </button>
-</form>
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder="Example input"
+        name="title"
+        formControlName="title"
+      >
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <textarea
+        matInput
+        placeholder="Example textarea"
+        name="text"
+        formControlName="text"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Select example</mat-label>
+      <mat-select
+        name="select"
+        formControlName="select"
+      >
+        <mat-option
+          *ngFor="let val of example"
+          [value]="val.value"
+        >
+          {{val.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="accent"
+    >
+      Submit
+    </button>
+  </form>
+</div>

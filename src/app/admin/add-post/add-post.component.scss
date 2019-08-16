@@ -1,5 +1,10 @@
 mat-form-field{
   display: block;
-  margin-top: 15px;
-  max-width: 300px;
+  margin-top: 1em;
+}
+
+.admin{
+  &__post{
+    background: #ffffff;
+  }
 }
