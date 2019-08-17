@@ -17,6 +17,7 @@
     text-decoration: none;
     will-change: opacity;
     transition: opacity ease-out 0.2s;
+    box-sizing: border-box;
     &:hover{
       opacity: 1;
     }
