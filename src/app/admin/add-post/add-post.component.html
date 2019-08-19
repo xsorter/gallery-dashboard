@@ -5,22 +5,34 @@
     class="example-form"
     [formGroup]="postForm"
   >
+  
     <mat-form-field class="example-full-width">
       <input
         matInput
-        placeholder="Example input"
+        placeholder="Title"
         name="title"
         formControlName="title"
       >
     </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <input
+        matInput
+        placeholder="Preview text"
+        name="previewText"
+        formControlName="previewText"
+      >
+    </mat-form-field>
+
     <mat-form-field class="example-full-width">
       <textarea
         matInput
-        placeholder="Example textarea"
+        placeholder="Text content"
         name="text"
         formControlName="text"
       ></textarea>
     </mat-form-field>
+
     <mat-form-field>
       <mat-label>Select example</mat-label>
       <mat-select
@@ -35,11 +47,13 @@
         </mat-option>
       </mat-select>
     </mat-form-field>
+
     <button
       mat-raised-button
       color="accent"
     >
       Submit
     </button>
+
   </form>
 </div>

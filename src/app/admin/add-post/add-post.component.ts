@@ -30,10 +30,12 @@ export class AddPostComponent implements OnInit {
     let title = '';
     let text = '';
     let select = '';
+    let previewText = '';
 
     this.postForm = new FormGroup({
       'title': new FormControl(title, Validators.required),
       'text': new FormControl(text, Validators.required),
+      'previewText': new FormControl(previewText, Validators.required),
       'select': new FormControl(select, Validators.required)
     })
   }
