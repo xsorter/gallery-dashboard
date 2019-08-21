@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
+import { Article } from 'src/app/shared/article.model';
 
 @Component({
   selector: 'app-add-post',
@@ -12,6 +13,7 @@ export class AddPostComponent implements OnInit {
   constructor(private dataStorageService: DataStorageService) { }
 
   postForm: FormGroup;
+  formData: Article;
 
   /*example = [
     {value: '1', viewValue: '1'},
@@ -26,7 +28,8 @@ export class AddPostComponent implements OnInit {
   onSubmit(){
     this.postForm.value.coverPath = ['https://est.sport.es/img/lzfoto.gif'];
     console.log(this.postForm.value);
-    this.dataStorageService.addArtice(this.postForm.value);
+    this.formData = this.postForm.value;
+    this.dataStorageService.addArtice(this.formData);
   }
 
   private initForm(){
