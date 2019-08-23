@@ -17,6 +17,13 @@ export class DataStorageService {
     this.articles.push(article)
   }
 
+  removeArticle(article: Article){
+    const index = this.articles.indexOf(article);
+    if(index > -1){
+      this.articles.splice(index, -1);
+    }
+  }
+
   getData(){
     return this.articles.slice()
   }
