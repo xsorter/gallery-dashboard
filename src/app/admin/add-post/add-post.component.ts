@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Article } from 'src/app/shared/article.model';
 
 @Component({
   selector: 'app-add-post',
   templateUrl: './add-post.component.html',
-  styleUrls: ['./add-post.component.scss']
+  styleUrls: ['./add-post.component.scss'],
 })
 export class AddPostComponent implements OnInit {
-
+  @ViewChild(FormGroupDirective,  {static: false}) formRef: FormGroupDirective;
   constructor(private dataStorageService: DataStorageService) { }
 
   postForm: FormGroup;
@@ -35,7 +35,8 @@ export class AddPostComponent implements OnInit {
       .then(resolve => {
         console.log('added!',resolve);
       });
-   
+
+    this.formRef.resetForm();  
     this.postForm.reset();
   }
 

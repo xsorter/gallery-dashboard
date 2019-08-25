@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { SharedMaterialModule } from '../material.module';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AddPostComponent } from './add-post/add-post.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { MenuComponent } from './menu/menu.component';
@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
     AddPostComponent, 
     DashboardComponent, 
     MenuComponent, 
-    AdminHomeComponent
+    AdminHomeComponent,
   ],
   imports: [
     CommonModule,
