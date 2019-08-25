@@ -29,13 +29,19 @@ export class AddPostComponent implements OnInit {
     this.postForm.value.coverPath = ['https://est.sport.es/img/lzfoto.gif'];
     console.log(this.postForm.value);
     this.formData = this.postForm.value;
+
     this.dataStorageService.addArtice(this.formData);
+    this.dataStorageService.storeArticle(this.formData, this.formData.title)
+      .then(resolve => {
+        console.log('added!',resolve);
+      });
+   
+    this.postForm.reset();
   }
 
   private initForm(){
     let title = '';
     let description = '';
-    //let select = '';
     let previewText = '';
 
     this.postForm = new FormGroup({
