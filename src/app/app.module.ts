@@ -17,6 +17,10 @@ import { AdminModule } from './admin/admin.module';
 import { SidebarComponent } from './client/sidebar/sidebar.component';
 import { DataStorageService } from './shared/data-storage.service';
 
+import { environment } from "src/environments/environment";
+import { AngularFireModule } from "@angular/fire";
+import { AngularFirestoreModule } from "@angular/fire/firestore";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +34,8 @@ import { DataStorageService } from './shared/data-storage.service';
     SidebarComponent,
   ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
