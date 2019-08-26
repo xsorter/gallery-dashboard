@@ -2,24 +2,24 @@
     <div class="container">
         <div class="content__main">
             <ul class="content__list">
-                <li class="content__list-item" *ngFor="let article of articles; let i = index">
+                <li class="content__list-item" *ngFor="let article of articles | async; let i = index">
                     <mat-card class="example-card">
-                        <a class="link__hidden" [routerLink]=[article.payload.doc.data().title]>
+                        <a class="link__hidden" routerLink={{article?.payload?.doc.data().title}}>
                             <mat-card-title>
                                 <h2>
-                                    {{article.payload.doc.data().title}}
+                                    {{article?.payload.doc.data().title}}
                                 </h2>
                             </mat-card-title>
                             <!--<mat-card-subtitle>subtitle</mat-card-subtitle>-->
                             <mat-card-content>
                                 <p>
-                                    {{article.payload.doc.data().previewText}}
+                                    {{article?.payload.doc.data().previewText}}
                                 </p>
                             </mat-card-content>
                             <img
                                 mat-card-image
-                                src="{{article.payload.doc.data().coverPath[0]}}"
-                                alt="{{article.payload.doc.data().title}}"
+                                src="{{article?.payload.doc.data().coverPath[0]}}"
+                                alt="{{article?.payload.doc.data().title}}"
                             >
                         </a> 
                         

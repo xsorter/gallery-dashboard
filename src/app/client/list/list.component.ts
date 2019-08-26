@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
-import { AngularFirestoreDocument, DocumentChangeAction } from '@angular/fire/firestore';
 import { Article } from 'src/app/shared/article.model';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,13 +13,10 @@ export class ListComponent implements OnInit {
 
   constructor(private dataService: DataStorageService ) { }
 
-  articles: Article[] = this.dataService.getData();
+  articles: Observable<Article[]>;
 
   ngOnInit() {
-    this.dataService.getDatabaseArticles()
-      .subscribe(res => {
-        this.articles = res 
-      })
+    this.articles = this.dataService.getDatabaseArticles();
   }
 
 }
