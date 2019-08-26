@@ -32,8 +32,8 @@ export class AddPostComponent implements OnInit {
 
     this.dataStorageService.addArtice(this.formData);
     this.dataStorageService.storeArticle(this.formData, this.formData.title)
-      .then(resolve => {
-        console.log('added!',resolve);
+      .then(() => {
+        console.log('added!');
       });
 
     this.formRef.resetForm();  

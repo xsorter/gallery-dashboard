@@ -30,12 +30,9 @@ export class DataStorageService {
 
   storeArticle(article: Article, id: string){
     this.articlesChanged.next(this.articles.slice());
-    return new Promise<Article>((resolve, reject) => {
-      this.firestore
-        .collection('articles').doc(id)
-        .set(article)
-        .then(res => {}, err => reject(err))
-    })
+    return this.firestore
+      .collection('articles').doc(id)
+      .set(article)
   }
 
   getData(){
