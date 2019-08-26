@@ -35,6 +35,10 @@ export class DataStorageService {
       .set(article)
   }
 
+  getDatabaseArticles(){
+    return this.firestore.collection('articles').snapshotChanges();
+  }
+
   getData(){
     return this.articles.slice()
   }
