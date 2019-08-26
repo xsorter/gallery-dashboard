@@ -10,10 +10,13 @@ export class ListComponent implements OnInit {
 
   constructor(private dataService: DataStorageService ) { }
 
-  articles = this.dataService.getData();
+  articles: any = this.dataService.getData();
 
   ngOnInit() {
-    console.log('Articles: ',this.articles);
+    this.dataService.getDatabaseArticles()
+      .subscribe(res => {
+        this.articles = res
+      })
   }
 
 }

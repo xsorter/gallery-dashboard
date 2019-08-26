@@ -12,12 +12,18 @@ export class DetailComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private dataService: DataStorageService) { }
 
-  article: Article;
+  //TODO: type missing
+  article;
 
+  //TODO: refactor
   ngOnInit() {
     this.route.params.subscribe(
       (data) => {
-        this.article = this.dataService.getArticle(data.id)
+        this.dataService.getDatabaseArticle(data.id)
+          .subscribe(doc => {
+            this.article = doc
+          })
+        /*this.article = this.dataService.getDatabaseArticle(data.id);*/
       }
     )
   }
