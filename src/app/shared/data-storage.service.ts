@@ -1,7 +1,7 @@
 import { Injectable, OnInit } from '@angular/core';
 import { Article } from './article.model';
-import { AngularFirestore } from '@angular/fire/firestore';
-import { Subject } from 'rxjs';
+import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable()
 export class DataStorageService{
@@ -35,13 +35,12 @@ export class DataStorageService{
       .set(article)
   }
 
-  getDatabaseArticles(){
+  getDatabaseArticles(): Observable<any[]>{
     return this.firestore.collection('articles').snapshotChanges();
   }
 
-  getDatabaseArticle(id: string){
+  getDatabaseArticle(id: string): Observable<any>{
     return this.firestore.collection('articles').doc(id).get();
-    
   }
 
   getData(){
