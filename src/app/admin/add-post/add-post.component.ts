@@ -36,9 +36,10 @@ export class AddPostComponent implements OnInit {
         console.log('added!');
       });
 
-    this.formRef.resetForm();  
-    this.postForm.reset();
+    this.resetForm();
+    
   }
+
 
   private initForm(){
     let title = '';
@@ -51,6 +52,11 @@ export class AddPostComponent implements OnInit {
       'previewText': new FormControl(previewText, Validators.required),
       //'select': new FormControl(select, Validators.required)
     })
+  }
+
+  private resetForm(){
+    this.formRef.resetForm();  
+    this.postForm.reset();
   }
 
 }
