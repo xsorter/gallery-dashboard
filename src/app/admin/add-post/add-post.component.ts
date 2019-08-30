@@ -25,6 +25,7 @@ export class AddPostComponent implements OnInit {
     this.initForm()
   }
 
+  //TODO: refactor
   onSubmit(){
     this.postForm.value.coverPath = ['https://est.sport.es/img/lzfoto.gif'];
     console.log(this.postForm.value);
@@ -58,5 +59,6 @@ export class AddPostComponent implements OnInit {
     this.formRef.resetForm();  
     this.postForm.reset();
   }
+
 
 }

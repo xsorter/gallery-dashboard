@@ -7,13 +7,14 @@ import { MenuComponent } from './menu/menu.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { CommonModule } from '@angular/common';
+import { UploaderComponent } from './uploader/uploader.component';
 
 @NgModule({
   declarations: [
     AddPostComponent, 
     DashboardComponent, 
     MenuComponent, 
-    AdminHomeComponent,
+    AdminHomeComponent, UploaderComponent,
   ],
   imports: [
     CommonModule,
