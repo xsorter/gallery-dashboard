@@ -20,6 +20,7 @@ import { DataStorageService } from './shared/data-storage.service';
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
+import { DragimagesDirective } from './shared/dragimages.directive';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
     HomeComponent,
     NotFoundComponent,
     SidebarComponent,
+    DragimagesDirective,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),

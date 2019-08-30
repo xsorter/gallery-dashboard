@@ -1,4 +1,4 @@
-import { Component, OnInit, ɵConsole } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Article } from 'src/app/shared/article.model';
@@ -15,7 +15,6 @@ export class DetailComponent implements OnInit {
 
   article: Observable<Article>;
 
-  //TODO: refactor
   ngOnInit() {
     this.route.params.subscribe(
       (data) => {

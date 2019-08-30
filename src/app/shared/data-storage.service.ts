@@ -1,6 +1,6 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Article } from './article.model';
-import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { Subject, Observable } from 'rxjs';
 
 @Injectable()
