@@ -8,13 +8,14 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { CommonModule } from '@angular/common';
 import { UploaderComponent } from './uploader/uploader.component';
+import { UploadProgressComponent } from './upload-progress/upload-progress.component';
 
 @NgModule({
   declarations: [
     AddPostComponent, 
     DashboardComponent, 
     MenuComponent, 
-    AdminHomeComponent, UploaderComponent,
+    AdminHomeComponent, UploaderComponent, UploadProgressComponent,
   ],
   imports: [
     CommonModule,

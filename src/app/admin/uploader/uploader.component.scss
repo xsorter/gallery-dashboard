@@ -1,0 +1,25 @@
+@import './../../../variables.scss';
+
+.admin{
+  &__drop{
+    &-zone{
+      background: #f7f7f7;
+      border: 1px dashed #c8c8c8;
+      padding: 1em;
+      border-radius: 5px;
+      text-align: center;
+      transition: all ease-out 0.2s;
+      &:hover{
+        opacity: 0.7;
+        border: 1px solid #c8c8c8;
+      }
+    }
+    &-title{
+      font-size: 28px;
+      color: #777777;
+    }
+    &-text{
+      color: #a3a3a3;
+    }
+  }
+}

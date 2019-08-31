@@ -1,13 +1,11 @@
-<div
-  class="admin__drop"
-  appDragimages
-  (hovered)="toggleHover($event)"
-  (dropped)="onDrop($event)"
-  [class.hovering]="isHovering"
->
-  <p>Drop file</p>
-</div>
-<p>Progress</p>
-<!-- <div *ngFor="let file of files">
-  <upload-task [file]="file"></upload-task>
+<div class="admin__drop">
+  <div class="admin__drop-zone" appDragimages (hovered)="toggleHover($event)" (dropped)="onDrop($event)"
+    [class.hovering]="isHovering">
+    <p class="admin__drop-title">Images upload</p>
+    <p class="admin__drop-text">Drag images here</p>
+  </div>
+  <p *ngIf="files.length > 0">Progress</p>
+  <!-- <div *ngFor="let file of files">
+  <app-upload-progress [file]="file"></app-upload-progress>
 </div> -->
+</div>
