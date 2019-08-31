@@ -4,8 +4,12 @@
     <p class="admin__drop-title">Images upload</p>
     <p class="admin__drop-text">Drag images here</p>
   </div>
-  <p *ngIf="files.length > 0">Progress</p>
-  <!-- <div *ngFor="let file of files">
-  <app-upload-progress [file]="file"></app-upload-progress>
-</div> -->
+
+  <div *ngIf="files.length > 0" class="admin__drop-progress">
+    <p>Progress</p>
+    <!-- <div *ngFor="let file of files">
+    <app-upload-progress [file]="file"></app-upload-progress>
+    </div> -->
+  </div>
+  
 </div>
