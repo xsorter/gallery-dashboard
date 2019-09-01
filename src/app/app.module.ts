@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedMaterialModule } from './material.module';
 import { AdminModule } from './admin/admin.module';
 import { SidebarComponent } from './client/sidebar/sidebar.component';
+
 import { DataStorageService } from './shared/data-storage.service';
 
 import { environment } from "src/environments/environment";
@@ -22,6 +23,7 @@ import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FirestoreSettingsToken} from '@angular/fire/firestore';
+import { ImageUploadService } from './shared/image-upload.service';
 
 
 
@@ -50,6 +52,7 @@ import { FirestoreSettingsToken} from '@angular/fire/firestore';
   ],
   providers: [
     DataStorageService,
+    ImageUploadService,
     { provide: FirestoreSettingsToken, useValue: {} }
   ],
   bootstrap: [AppComponent]

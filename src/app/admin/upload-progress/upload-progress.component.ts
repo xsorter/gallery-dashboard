@@ -3,6 +3,7 @@ import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { tap, finalize } from 'rxjs/operators';
+import { ImageUploadService } from 'src/app/shared/image-upload.service';
 
 @Component({
   selector: 'app-upload-progress',
@@ -10,7 +11,7 @@ import { tap, finalize } from 'rxjs/operators';
   styleUrls: ['./upload-progress.component.scss']
 })
 export class UploadProgressComponent implements OnInit {
-  
+
   @Input() file: File;
 
   task: AngularFireUploadTask;
@@ -19,13 +20,14 @@ export class UploadProgressComponent implements OnInit {
   downloadURL: string;
 
 
-  constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
+  constructor(private storage: AngularFireStorage, private db: AngularFirestore,
+              private uploadService: ImageUploadService) { }
 
   ngOnInit() {
     this.startUpload()
   }
 
-  startUpload(){
+  startUpload() {
     const path = `articles/${Date.now}_${this.file.name}`;
     const ref = this.storage.ref(path);
 
@@ -35,9 +37,10 @@ export class UploadProgressComponent implements OnInit {
     this.snapshot = this.task.snapshotChanges()
       .pipe(
         tap(console.log),
-        finalize( async() => {
+        finalize(async () => {
           this.downloadURL = await ref.getDownloadURL().toPromise();
           console.log(this.downloadURL);
+          this.uploadService.addUrl(this.downloadURL);
           /*
           TODO: save url to form values
           this.db.collection('files').add( { downloadURL: this.downloadURL , path });*/
@@ -46,8 +49,8 @@ export class UploadProgressComponent implements OnInit {
 
   }
 
-  isActive(snapshot){
+  isActive(snapshot) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
   }
-  
+
 }
