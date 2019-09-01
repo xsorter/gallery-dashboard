@@ -9,9 +9,11 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { CommonModule } from '@angular/common';
 import { UploaderComponent } from './uploader/uploader.component';
 import { UploadProgressComponent } from './upload-progress/upload-progress.component';
+import { DragimagesDirective } from './dragimages.directive';
 
 @NgModule({
   declarations: [
+    DragimagesDirective,
     AddPostComponent, 
     DashboardComponent, 
     MenuComponent, 

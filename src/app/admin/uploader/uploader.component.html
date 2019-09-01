@@ -1,15 +1,40 @@
 <div class="admin__drop">
-  <div class="admin__drop-zone" appDragimages (hovered)="toggleHover($event)" (dropped)="onDrop($event)"
-    [class.hovering]="isHovering">
+  <div
+    class="admin__drop-zone"
+    appDragimages
+    (hovered)="toggleHover($event)"
+    (dropped)="onDrop($event)"
+    [class.hovering]="isHovering"
+  >
     <p class="admin__drop-title">Images upload</p>
     <p class="admin__drop-text">Drag images here</p>
+
+    <div class="file">
+      <label class="file-label">
+      <input class="file-input" type="file" (change)="onDrop($event.target.files)">
+        <span class="file-cta">
+          <span class="file-icon">
+            <i class="fa fa-upload"></i>
+          </span>
+          <span class="file-label">
+            or choose a file…
+          </span>
+        </span>
+      </label>
+    </div>
+
   </div>
 
-  <div *ngIf="files.length > 0" class="admin__drop-progress">
+
+  <div
+    *ngIf="files.length > 0"
+    class="admin__drop-progress"
+  >
     <p>Progress</p>
-    <!-- <div *ngFor="let file of files">
-    <app-upload-progress [file]="file"></app-upload-progress>
-    </div> -->
+    <div *ngFor="let file of files">
+      <app-upload-progress [file]="file"></app-upload-progress>
+    </div>
   </div>
-  
+
+
 </div>

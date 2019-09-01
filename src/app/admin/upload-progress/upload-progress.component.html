@@ -6,7 +6,7 @@
 <div *ngIf="snapshot | async as snap">
   {{ snap.bytesTransferred }} of {{ snap.totalBytes }}
 
-  <div *ngIf="downloadUrl as url">
+  <div *ngIf="downloadURL as url">
     <p>Results:</p>
     <img [src]="url" alt="">
     <a [href]="url" rel="noopener" target="_blank">download</a>

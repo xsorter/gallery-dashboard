@@ -16,12 +16,13 @@ export class UploadProgressComponent implements OnInit {
   task: AngularFireUploadTask;
   percentage: Observable<number>;
   snapshot: Observable<any>;
-  downloadUrl: string;
+  downloadURL: string;
 
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore) { }
 
   ngOnInit() {
+    this.startUpload()
   }
 
   startUpload(){
@@ -35,11 +36,11 @@ export class UploadProgressComponent implements OnInit {
       .pipe(
         tap(console.log),
         finalize( async() => {
-          this.downloadUrl = await ref.getDownloadURL().toPromise();
-
+          this.downloadURL = await ref.getDownloadURL().toPromise();
+          console.log(this.downloadURL);
           /*
           TODO: save url to form values
-          this.db.collection('files').add( { downloadURL: this.downloadUrl, path });*/
+          this.db.collection('files').add( { downloadURL: this.downloadURL , path });*/
         })
       )
 

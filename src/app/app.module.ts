@@ -20,7 +20,9 @@ import { DataStorageService } from './shared/data-storage.service';
 import { environment } from "src/environments/environment";
 import { AngularFireModule } from "@angular/fire";
 import { AngularFirestoreModule } from "@angular/fire/firestore";
-import { DragimagesDirective } from './shared/dragimages.directive';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { FirestoreSettingsToken} from '@angular/fire/firestore';
+
 
 
 @NgModule({
@@ -34,18 +36,22 @@ import { DragimagesDirective } from './shared/dragimages.directive';
     HomeComponent,
     NotFoundComponent,
     SidebarComponent,
-    DragimagesDirective,
+    
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
+    AngularFireStorageModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedMaterialModule,
     AdminModule
   ],
-  providers: [DataStorageService],
+  providers: [
+    DataStorageService,
+    { provide: FirestoreSettingsToken, useValue: {} }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
