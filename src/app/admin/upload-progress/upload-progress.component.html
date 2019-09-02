@@ -8,7 +8,7 @@
 
   <div *ngIf="downloadURL as url">
     <p>Results:</p>
-    <img [src]="url" alt="">
+    <img class="progress__image" [src]="url" alt="">
     <a [href]="url" rel="noopener" target="_blank">download</a>
   </div>
 
