@@ -24,6 +24,12 @@ export class UploadProgressComponent implements OnInit {
               private uploadService: ImageUploadService) { }
 
   ngOnInit() {
+    const fileType = this.file.type.split('/')[0];
+    if(fileType == 'image'){
+      console.log('this is image')
+    }else{
+      console.log('wrong file')
+    }
     this.startUpload()
   } 
 
