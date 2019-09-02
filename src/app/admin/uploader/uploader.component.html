@@ -11,7 +11,7 @@
 
     <div class="file">
       <label class="file-label">
-        <input class="admin__drop-input" type="file" (change)="onDrop($event.target.files)">
+        <input class="admin__drop-input" accept="image/*" type="file" (change)="onDrop($event.target.files)">
         <div class="admin__drop-file">
           <mat-icon mat-list-icon class="icon material-icons">add_photo_alternate</mat-icon>
           <span class="file-label"> 
