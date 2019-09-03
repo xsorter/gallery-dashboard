@@ -11,20 +11,20 @@ export class NotifyComponent implements OnInit, OnDestroy {
 
   constructor(private notifyService: NotifyService) { }
 
-  message: string = '';
-  subscipsion: Subscription;
+  notification: Object;
+  subsciption: Subscription;
 
   ngOnInit() {
-    this.subscipsion = this.notifyService.notify$.subscribe(
+    this.subsciption = this.notifyService.notify$.subscribe(
       (item) => {
-        this.message = item;
+        this.notification = item;
         console.log('GETTING', item)
       }
     )
   }
 
   ngOnDestroy() {
-    this.subscipsion.unsubscribe()
+    this.subsciption.unsubscribe()
   }
 
 }

@@ -43,18 +43,20 @@ export class UploadProgressComponent implements OnInit {
           this.downloadURL = await ref.getDownloadURL().toPromise();
           console.log(this.downloadURL);
           this.uploadService.addUrl(this.downloadURL);
-          /*
-          TODO: save url to form values
-          this.db.collection('files').add( { downloadURL: this.downloadURL , path });*/
         })
       )
 
   }
 
   fileTypeCheck(){
-    this.notifyService.setEvent('TEST');
+    this.notifyService.setEvent({
+      type: 'error',
+      message: 'this is img event',
+      fired: true
+    });
     const fileType = this.file.type.split('/')[0];
     if(fileType == 'image'){
+      //TODO: fire upload from here
       console.log('this is image')
     }else{
       console.log('wrong file')

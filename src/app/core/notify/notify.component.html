@@ -1,4 +1,4 @@
-<div class="notify">
+<div *ngIf="notification.fired" class="notify">
   NOTY: <br>
-  {{message}}
+  {{notification.message}}
 </div>
