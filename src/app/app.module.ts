@@ -24,6 +24,7 @@ import { AngularFirestoreModule } from "@angular/fire/firestore";
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FirestoreSettingsToken} from '@angular/fire/firestore';
 import { ImageUploadService } from './shared/image-upload.service';
+import { NotifyComponent } from './core/notify/notify.component';
 
 
 
@@ -38,7 +39,8 @@ import { ImageUploadService } from './shared/image-upload.service';
     HomeComponent,
     NotFoundComponent,
     SidebarComponent,
-    
+    NotifyComponent,
+     
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebaseConfig),
