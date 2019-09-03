@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { tap, finalize } from 'rxjs/operators';
 import { ImageUploadService } from 'src/app/shared/image-upload.service';
+import { NotifyService } from 'src/app/shared/notify-service';
 
 @Component({
   selector: 'app-upload-progress',
@@ -21,9 +22,11 @@ export class UploadProgressComponent implements OnInit {
 
 
   constructor(private storage: AngularFireStorage, private db: AngularFirestore,
-              private uploadService: ImageUploadService) { }
+              private uploadService: ImageUploadService, private notifyService: NotifyService) { }
 
   ngOnInit() {
+    this.notifyService.setEvent('TEST');
+
     const fileType = this.file.type.split('/')[0];
     if(fileType == 'image'){
       console.log('this is image')

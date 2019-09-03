@@ -25,6 +25,7 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { FirestoreSettingsToken} from '@angular/fire/firestore';
 import { ImageUploadService } from './shared/image-upload.service';
 import { NotifyComponent } from './core/notify/notify.component';
+import { NotifyService } from './shared/notify-service';
 
 
 
@@ -55,6 +56,7 @@ import { NotifyComponent } from './core/notify/notify.component';
   providers: [
     DataStorageService,
     ImageUploadService,
+    NotifyService,
     { provide: FirestoreSettingsToken, useValue: {} }
   ],
   bootstrap: [AppComponent]

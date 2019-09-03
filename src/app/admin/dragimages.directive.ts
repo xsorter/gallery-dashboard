@@ -28,7 +28,6 @@ export class DragimagesDirective {
   onDragLeave($event) {
     $event.preventDefault();
     this.hovered.emit(false);
-    console.log('LEAVED',$event);
   }
 
 }
