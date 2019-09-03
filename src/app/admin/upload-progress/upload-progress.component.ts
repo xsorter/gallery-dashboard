@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { AngularFireStorage, AngularFireUploadTask } from '@angular/fire/storage';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -11,7 +11,7 @@ import { NotifyService } from 'src/app/shared/notify-service';
   templateUrl: './upload-progress.component.html',
   styleUrls: ['./upload-progress.component.scss']
 })
-export class UploadProgressComponent implements OnInit {
+export class UploadProgressComponent implements OnInit, OnDestroy {
 
   @Input() file: File;
 
@@ -26,7 +26,6 @@ export class UploadProgressComponent implements OnInit {
 
   ngOnInit() {
     this.fileTypeCheck();
-    this.startUpload()
   } 
 
   startUpload() {
@@ -49,22 +48,28 @@ export class UploadProgressComponent implements OnInit {
   }
 
   fileTypeCheck(){
-    this.notifyService.setEvent({
-      type: 'error',
-      message: 'this is img event',
-      fired: true
-    });
     const fileType = this.file.type.split('/')[0];
     if(fileType == 'image'){
-      //TODO: fire upload from here
-      console.log('this is image')
+      this.startUpload();
     }else{
-      console.log('wrong file')
+      this.notifyService.setEvent({
+        type: 'error',
+        message: 'Wrong file type. Please provide image file',
+        fired: true
+      });
     }
   }
 
   isActive(snapshot) {
     return snapshot.state === 'running' && snapshot.bytesTransferred < snapshot.totalBytes
+  }
+
+  ngOnDestroy(){
+    this.notifyService.setEvent({
+      type: '',
+      message: '',
+      fired: false
+    })
   }
 
 }

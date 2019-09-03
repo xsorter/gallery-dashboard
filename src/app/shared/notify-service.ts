@@ -18,7 +18,7 @@ export class NotifyService {
       type: '',
       message: '',
       fired: false
-    })}, 3000);
+    })}, 4000);
   }
 
 }
