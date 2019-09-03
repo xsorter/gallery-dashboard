@@ -25,14 +25,7 @@ export class UploadProgressComponent implements OnInit {
               private uploadService: ImageUploadService, private notifyService: NotifyService) { }
 
   ngOnInit() {
-    this.notifyService.setEvent('TEST');
-
-    const fileType = this.file.type.split('/')[0];
-    if(fileType == 'image'){
-      console.log('this is image')
-    }else{
-      console.log('wrong file')
-    }
+    this.fileTypeCheck();
     this.startUpload()
   } 
 
@@ -56,6 +49,16 @@ export class UploadProgressComponent implements OnInit {
         })
       )
 
+  }
+
+  fileTypeCheck(){
+    this.notifyService.setEvent('TEST');
+    const fileType = this.file.type.split('/')[0];
+    if(fileType == 'image'){
+      console.log('this is image')
+    }else{
+      console.log('wrong file')
+    }
   }
 
   isActive(snapshot) {
