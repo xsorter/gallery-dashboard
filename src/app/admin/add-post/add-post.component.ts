@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular
 import { DataStorageService } from 'src/app/shared/data-storage.service';
 import { Article } from 'src/app/shared/article.model';
 import { ImageUploadService } from 'src/app/shared/image-upload.service';
+import { NotifyService } from 'src/app/shared/notify-service';
 
 @Component({
   selector: 'app-add-post',
@@ -11,7 +12,8 @@ import { ImageUploadService } from 'src/app/shared/image-upload.service';
 })
 export class AddPostComponent implements OnInit {
   @ViewChild(FormGroupDirective,  {static: false}) formRef: FormGroupDirective;
-  constructor(private dataStorageService: DataStorageService, private uploadService: ImageUploadService) { }
+  constructor(private dataStorageService: DataStorageService, 
+              private uploadService: ImageUploadService, private notifyService: NotifyService) { }
 
   postForm: FormGroup;
   formData: Article;
@@ -38,6 +40,11 @@ export class AddPostComponent implements OnInit {
     this.dataStorageService.storeArticle(this.formData, this.formData.title)
       .then(() => {
         console.log('added!');
+        this.notifyService.setEvent({
+          type: 'success',
+          message: 'Article added!',
+          fired: true
+        })
       });
 
     this.resetForm();
