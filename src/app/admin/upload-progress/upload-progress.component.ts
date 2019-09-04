@@ -69,7 +69,7 @@ export class UploadProgressComponent implements OnInit, OnDestroy {
       type: '',
       message: '',
       fired: false
-    })*?
+    })*/
   }
 
 }

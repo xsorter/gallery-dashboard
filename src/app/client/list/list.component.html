@@ -4,7 +4,7 @@
       <ul class="content__list">
         <li
           class="content__list-item"
-          *ngFor="let article of articles | async; let i = index"
+          *ngFor="let article of articles$ | async; let i = index"
         >
           <mat-card class="example-card">
             <a
