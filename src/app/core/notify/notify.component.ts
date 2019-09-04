@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NotifyService } from 'src/app/shared/notify-service';
 import { Subscription } from 'rxjs';
+import { Notify } from 'src/app/shared/notify.model';
 
 @Component({
   selector: 'app-notify',
@@ -11,7 +12,7 @@ export class NotifyComponent implements OnInit, OnDestroy {
 
   constructor(private notifyService: NotifyService) { }
 
-  notification: any;
+  notification: Notify;
   subsciption: Subscription;
 
   ngOnInit() {
