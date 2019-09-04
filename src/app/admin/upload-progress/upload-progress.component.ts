@@ -65,11 +65,11 @@ export class UploadProgressComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(){
-    this.notifyService.setEvent({
+    /*this.notifyService.setEvent({
       type: '',
       message: '',
       fired: false
-    })
+    })*?
   }
 
 }
