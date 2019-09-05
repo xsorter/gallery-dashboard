@@ -13,6 +13,6 @@
             <div>{{article?.data().description}}</div>
         </div>
 
-        <app-gallery></app-gallery>
+        <app-gallery *ngIf="article?.data().coverPath" [images]="article?.data().coverPath"></app-gallery>
     </div>
 </section>
