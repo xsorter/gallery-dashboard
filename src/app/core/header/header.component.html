@@ -1,13 +1,12 @@
 <header>
   <div
-    [ngClass]="childRoute === 'admin' ? 'header__wrapper-admin' : '' "
-    class="header__wrapper mat-elevation-z6"
+    class="header__wrapper mat-elevation-z6 header__wrapper-{{childRoute}}"
   >
     <nav class="header__menu">
       <ul class="header__menu-navigation">
         <li class="header__menu-item">
           <a
-            class="header__link"
+            class="header__link header__link-{{childRoute}}"
             routerLinkActive="header__link-active"
             [routerLinkActiveOptions]="{exact: true}"
             [ngClass]="childRoute === 'admin' ? 'header__link-admin' : '' "

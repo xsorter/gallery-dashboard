@@ -3,8 +3,12 @@
 .header{
   &__wrapper{
     background: var(--base-color);
+    z-index: 9;
     &-admin{
       background: var(--admin-color);
+    }
+    &-home{
+      background: rgba(255,255,255,0.8);
     }
   }
   &__menu{

@@ -11,9 +11,10 @@
 .detail{
   &__cover{
     width: 100%;
-    max-width: 700px;
+    max-height: 600px;
     display: block;
     margin: 0 auto;
+    object-fit: contain;
   }
   &__text{
     padding: 1em 4em;
