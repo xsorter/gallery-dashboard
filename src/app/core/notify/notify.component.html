@@ -1,4 +1,6 @@
-<div *ngIf="notification.fired" class="notify {{notification.type}}">
+<div [@notyState]="animationState" 
+    
+    class="notify {{notification.type}}">
   NOTY: <br>
   {{notification.message}}
 </div>

@@ -5,10 +5,13 @@
   right: 10px;
   bottom: 0px;
   z-index: 999;
+  display: none;
   &.error{
     background: red;
+    display: block;
   }
   &.success{
     background: green;
+    display: block;
   }
 }
