@@ -10,15 +10,14 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   styleUrls: ['./notify.component.scss'],
   animations: [trigger('notyState', [
       state('false', style({
-        opacity: '0',
-        transform: 'scale(1)'
+        bottom: '-300px',
+        opacity: '0'
       })),
       state('true', style({
-        opacity: '1',
-        transform: 'scale(1)'
+        bottom: '0',
+        opacity: '1'
       })),
-      transition('*=>false', animate('900ms')),
-      transition('*=>true', animate('1200ms'))
+      transition('true<=>false', animate('400ms'))
   ])]
 })
 export class NotifyComponent implements OnInit, OnDestroy {
