@@ -42,5 +42,20 @@
       }
 
     }
+    &-progress{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+  }
+}
+
+.uploader{
+  max-width: 240px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  &__title{
+    text-align: center;
+    margin: 1em;
   }
 }

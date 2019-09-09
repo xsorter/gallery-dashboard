@@ -24,12 +24,12 @@
   </div>
 
 
+  <p class="uploader__title" *ngIf="files.length > 0">Progress</p>
   <div
     *ngIf="files.length > 0"
     class="admin__drop-progress"
   >
-    <p>Progress</p>
-    <div *ngFor="let file of files">
+    <div class="uploader" *ngFor="let file of files">
       <app-upload-progress [file]="file"></app-upload-progress>
     </div>
   </div>
