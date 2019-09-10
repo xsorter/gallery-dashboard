@@ -1,5 +1,5 @@
 <div class="progress">
-  <div *ngIf="percentage | async as percent">
+  <div class="progress__box" *ngIf="percentage | async as percent">
     <progress [value]="percent" max="100"></progress> 
     {{percent | number}}%
   </div>
@@ -10,6 +10,7 @@
     </div>
   
     <button 
+      type="button"
       mat-raised-button
       color="accent" 
       (click)="task.pause()" 
@@ -17,12 +18,14 @@
       Pause
     </button>
     <button 
+      type="button"
       mat-raised-button
       (click)="task.cancel()" 
       [disabled]="!isActive(snap)">
       Cancel
     </button>
     <button 
+      type="button"
       mat-raised-button
       (click)="task.resume()" 
       [disabled]="!(snap?.state === 'paused')">
