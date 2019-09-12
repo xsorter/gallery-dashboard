@@ -9,28 +9,37 @@
       <img class="progress__image" [src]="url" alt="">
     </div>
   
-    <button 
+    <div class="progress__buttons">
+      <button 
       type="button"
+      class="progress__button progress__button-pause"
       mat-raised-button
       color="accent" 
+      title="pause"
       (click)="task.pause()" 
       [disabled]="!isActive(snap)">
-      Pause
+      <mat-icon mat-list-icon class="icon material-icons">pause_circle_outline</mat-icon>
     </button>
     <button 
       type="button"
+      class="progress__button progress__button-cancel"
+      title="cancel"
       mat-raised-button
       (click)="task.cancel()" 
       [disabled]="!isActive(snap)">
-      Cancel
+      <mat-icon mat-list-icon class="icon material-icons">cancel</mat-icon>
     </button>
     <button 
       type="button"
+      class="progress__button progress__button-play"
+      title="resume"
       mat-raised-button
       (click)="task.resume()" 
       [disabled]="!(snap?.state === 'paused')">
       <mat-icon mat-list-icon class="icon material-icons">play_circle_filled</mat-icon>
     </button>
+    </div>
+    
   </div>
 </div>
 

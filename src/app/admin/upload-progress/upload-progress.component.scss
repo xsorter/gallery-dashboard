@@ -31,4 +31,20 @@ progress::-webkit-progress-bar{
     justify-content: space-between;
     align-items: center;
   }
+  &__buttons{
+    display: flex;
+    justify-content: center;
+  }
+  &__button{
+    margin-right: 0.2em;
+    &-pause{
+
+    }
+    &-cancel{
+
+    }
+    &-play{
+
+    }
+  }
 }
