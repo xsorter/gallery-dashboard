@@ -11,6 +11,7 @@ import { UploaderComponent } from './uploader/uploader.component';
 import { UploadProgressComponent } from './upload-progress/upload-progress.component';
 import { DragimagesDirective } from './dragimages.directive';
 import { AdminUiComponent } from './admin-ui/admin-ui.component';
+import { AdminArticlesComponent } from './admin-articles/admin-articles.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { AdminUiComponent } from './admin-ui/admin-ui.component';
     AddPostComponent, 
     DashboardComponent, 
     MenuComponent, 
-    AdminHomeComponent, UploaderComponent, UploadProgressComponent, AdminUiComponent,
+    AdminHomeComponent, UploaderComponent, UploadProgressComponent, AdminUiComponent, AdminArticlesComponent,
   ],
   imports: [
     CommonModule,
