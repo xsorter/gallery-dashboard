@@ -1,3 +1,8 @@
 <div class="admin__articles">
-  <h1 class="admin__title">Dashboard Information</h1>
+  <h1 class="admin__title">Articles List</h1>
+  <ul class="admin__articles-list"> 
+    <li *ngFor="let article of articles$ | async; let i = index" class="admin__articles-item">
+      <h2 class="admin__articles-title">{{article?.payload.doc.data().title}}</h2>
+    </li>
+  </ul>
 </div>
