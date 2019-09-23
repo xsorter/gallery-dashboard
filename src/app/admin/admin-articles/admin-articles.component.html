@@ -3,6 +3,9 @@
   <ul class="admin__articles-list"> 
     <li *ngFor="let article of articles$ | async; let i = index" class="mat-elevation-z2 admin__articles-item">
       <h2 class="admin__articles-title">{{article?.payload.doc.data().title}}</h2>
+      <div class="admin__articles-actions">
+        <mat-icon mat-list-icon class="icon material-icons">edit</mat-icon>
+      </div>
     </li>
   </ul>
 </div>
