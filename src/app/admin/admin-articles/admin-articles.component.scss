@@ -31,6 +31,10 @@
       font-family: Roboto;
       font-size: 24px;
       font-weight: 400;
+      transition: opacity ease-out 0.2s;
+      &:hover{
+        opacity: 0.5;
+      }
     }
   }
   &__title{
