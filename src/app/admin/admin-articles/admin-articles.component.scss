@@ -1,18 +1,17 @@
-
-.admin{
-  &__articles{
+.admin {
+  &__articles {
     background: #ffffff;
     padding: 1em;
     margin: 1em 1em 1em 0.5em;
-    &-icon{
+    &-icon {
       color: #555555;
       cursor: pointer;
       transition: opacity ease-out 0.2s;
-      &:hover{
+      &:hover {
         opacity: 0.5;
       }
     }
-    &-item{
+    &-item {
       border-radius: 5px;
       padding: 0.3em 0.5em;
       margin-bottom: 0.6em;
@@ -20,27 +19,26 @@
       justify-content: space-between;
       align-items: center;
     }
-    &-actions{
+    &-actions {
       display: flex;
       align-items: center;
     }
-    &-list{
+    &-list {
       margin: 1em;
     }
-    &-title{
+    &-title {
       font-family: Roboto;
       font-size: 24px;
       font-weight: 400;
       transition: opacity ease-out 0.2s;
-      &:hover{
+      &:hover {
         opacity: 0.5;
       }
     }
   }
-  &__title{
+  &__title {
     font-family: Roboto, Helvetica, sans-serif;
     font-size: 38px;
     text-align: center;
   }
-  
 }

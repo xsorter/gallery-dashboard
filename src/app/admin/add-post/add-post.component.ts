@@ -1,19 +1,27 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormGroupDirective } from '@angular/forms';
-import { DataStorageService } from 'src/app/shared/data-storage.service';
-import { Article } from 'src/app/shared/article.model';
-import { ImageUploadService } from 'src/app/shared/image-upload.service';
-import { NotifyService } from 'src/app/shared/notify-service';
+import { Component, OnInit, ViewChild } from "@angular/core";
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormGroupDirective
+} from "@angular/forms";
+import { DataStorageService } from "src/app/shared/data-storage.service";
+import { Article } from "src/app/shared/article.model";
+import { ImageUploadService } from "src/app/shared/image-upload.service";
+import { NotifyService } from "src/app/shared/notify-service";
 
 @Component({
-  selector: 'app-add-post',
-  templateUrl: './add-post.component.html',
-  styleUrls: ['./add-post.component.scss'],
+  selector: "app-add-post",
+  templateUrl: "./add-post.component.html",
+  styleUrls: ["./add-post.component.scss"]
 })
 export class AddPostComponent implements OnInit {
-  @ViewChild(FormGroupDirective,  {static: false}) formRef: FormGroupDirective;
-  constructor(private dataStorageService: DataStorageService, 
-              private uploadService: ImageUploadService, private notifyService: NotifyService) { }
+  @ViewChild(FormGroupDirective, { static: false }) formRef: FormGroupDirective;
+  constructor(
+    private dataStorageService: DataStorageService,
+    private uploadService: ImageUploadService,
+    private notifyService: NotifyService
+  ) {}
 
   postForm: FormGroup;
   formData: Article;
@@ -29,7 +37,7 @@ export class AddPostComponent implements OnInit {
   }
 
   //TODO: refactor
-  onSubmit(){
+  onSubmit() {
     //this.postForm.value.coverPath = ['https://est.sport.es/img/lzfoto.gif'];
     this.postForm.value.coverPath = this.uploadService.getUrls();
 
@@ -37,38 +45,35 @@ export class AddPostComponent implements OnInit {
     this.formData = this.postForm.value;
 
     this.dataStorageService.addArtice(this.formData);
-    this.dataStorageService.storeArticle(this.formData, this.formData.title)
+    this.dataStorageService
+      .storeArticle(this.formData, this.formData.title)
       .then(() => {
-        console.log('added!');
+        console.log("added!");
         this.notifyService.setEvent({
-          type: 'success',
-          message: 'Article added!',
+          type: "success",
+          message: "Article added!",
           fired: true
-        })
+        });
       });
 
     this.resetForm();
-    
   }
 
-
-  private initForm(){
-    let title = '';
-    let description = '';
-    let previewText = '';
+  private initForm() {
+    let title = "";
+    let description = "";
+    let previewText = "";
 
     this.postForm = new FormGroup({
-      'title': new FormControl(title, Validators.required),
-      'description': new FormControl(description, Validators.required),
-      'previewText': new FormControl(previewText, Validators.required),
+      title: new FormControl(title, Validators.required),
+      description: new FormControl(description, Validators.required),
+      previewText: new FormControl(previewText, Validators.required)
       //'select': new FormControl(select, Validators.required)
-    })
+    });
   }
 
-  private resetForm(){
-    this.formRef.resetForm();  
+  private resetForm() {
+    this.formRef.resetForm();
     this.postForm.reset();
   }
-
-
 }

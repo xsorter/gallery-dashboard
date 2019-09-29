@@ -1,14 +1,12 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { Notify } from './notify.model';
-
+import { Injectable } from "@angular/core";
+import { BehaviorSubject } from "rxjs";
+import { Notify } from "./notify.model";
 
 @Injectable()
 export class NotifyService {
-
   private notifyEvent = new BehaviorSubject<Notify>({
-    type: '',
-    message: '',
+    type: "",
+    message: "",
     fired: false
   });
   public notify$ = this.notifyEvent.asObservable();
@@ -18,12 +16,13 @@ export class NotifyService {
     this.resetNotify();
   }
 
-  resetNotify(){
-    setTimeout(() => {this.notifyEvent.next({
-      type: '',
-      message: '',
-      fired: false
-    })}, 4000);
+  resetNotify() {
+    setTimeout(() => {
+      this.notifyEvent.next({
+        type: "",
+        message: "",
+        fired: false
+      });
+    }, 4000);
   }
-
 }

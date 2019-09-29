@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
-import { Article } from './article.model';
-import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
-import { Subject, Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Article } from "./article.model";
+import { AngularFirestore, DocumentSnapshot } from "@angular/fire/firestore";
+import { Subject, Observable } from "rxjs";
 
 @Injectable()
-export class DataStorageService{
+export class DataStorageService {
   articlesChanged = new Subject<Article[]>();
 
   public articles: any = [
@@ -13,41 +13,45 @@ export class DataStorageService{
     new Article('Title-2', 'Preview text','Some description-2', ['https://images.unsplash.com/photo-1563573475337-918ce3ee6fc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80']),
 
     new Article('Title-3', 'Preview text','Some description-3', ['https://images.unsplash.com/photo-1563441846967-d5c0d86b20a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1300&q=80']),*/
-  ]
+  ];
 
-  constructor(private firestore: AngularFirestore){}
+  constructor(private firestore: AngularFirestore) {}
 
-  addArtice(article){
-    this.articles.push(article)
+  addArtice(article) {
+    this.articles.push(article);
   }
 
-  removeArticle(article: Article){
+  removeArticle(article: Article) {
     const index = this.articles.indexOf(article);
-    if(index > -1){
+    if (index > -1) {
       this.articles.splice(index, -1);
     }
   }
 
-  storeArticle(article: Article, id: string){
+  storeArticle(article: Article, id: string) {
     this.articlesChanged.next(this.articles.slice());
     return this.firestore
-      .collection('articles').doc(id)
-      .set(article)
+      .collection("articles")
+      .doc(id)
+      .set(article);
   }
 
-  getDatabaseArticles(): Observable<any[]>{
-    return this.firestore.collection('articles').snapshotChanges();
+  getDatabaseArticles(): Observable<any[]> {
+    return this.firestore.collection("articles").snapshotChanges();
   }
 
-  getDatabaseArticle(id: string): Observable<any>{
-    return this.firestore.collection('articles').doc(id).get();
+  getDatabaseArticle(id: string): Observable<any> {
+    return this.firestore
+      .collection("articles")
+      .doc(id)
+      .get();
   }
 
-  getData(){
-    return this.articles.slice()
+  getData() {
+    return this.articles.slice();
   }
 
-  getArticle(index: number){
-    return this.articles[index]
+  getArticle(index: number) {
+    return this.articles[index];
   }
 }

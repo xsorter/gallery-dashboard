@@ -1,6 +1,7 @@
-progress{
+progress {
   background-color: #f7f7f7;
-  box-shadow: inset 0px 1px 1px rgba(0,0,0,0.3), 0px 1px 0px rgba(255,255,255,0.3);
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.3),
+    0px 1px 0px rgba(255, 255, 255, 0.3);
   appearance: none;
   border-radius: 10px;
   border: 0 none;
@@ -8,43 +9,34 @@ progress{
   margin-right: 10px;
 }
 
-progress::-webkit-progress-value {  
+progress::-webkit-progress-value {
   background: #86ebf7;
   appearance: none;
   transition: width 0.1s ease;
   border-radius: 10px;
-} 
-progress::-webkit-progress-bar{
+}
+progress::-webkit-progress-bar {
   background: transparent;
 }
 
-.progress{
-  &__image{
+.progress {
+  &__image {
     width: 100%;
     max-width: 300px;
     min-height: 180px;
     object-fit: cover;
   }
-  &__box{
+  &__box {
     margin: 0.5em 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  &__buttons{
+  &__buttons {
     display: flex;
     justify-content: center;
   }
-  &__button{
+  &__button {
     margin-right: 0.2em;
-    &-pause{
-
-    }
-    &-cancel{
-
-    }
-    &-play{
-
-    }
   }
 }

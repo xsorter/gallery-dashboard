@@ -1,14 +1,26 @@
 <div class="admin__articles">
   <h1 class="admin__title">Articles List</h1>
-  <ul class="admin__articles-list"> 
-    <li *ngFor="let article of articles$ | async; let i = index" class="mat-elevation-z2 admin__articles-item">
-      <a class="link__hidden" routerLink="/list/{{article?.payload?.doc.data().title}}">
-        <h2 class="admin__articles-title">{{article?.payload.doc.data().title}}</h2>
+  <ul class="admin__articles-list">
+    <li
+      *ngFor="let article of articles$ | async; let i = index"
+      class="mat-elevation-z2 admin__articles-item"
+    >
+      <a
+        class="link__hidden"
+        routerLink="/list/{{ article?.payload?.doc.data().title }}"
+      >
+        <h2 class="admin__articles-title">
+          {{ article?.payload.doc.data().title }}
+        </h2>
       </a>
-      
+
       <div class="admin__articles-actions">
-        <mat-icon mat-list-icon class="admin__articles-icon icon material-icons">edit</mat-icon>
-        <mat-icon mat-list-icon class="admin__articles-icon icon material-icons">delete_forever</mat-icon>
+        <mat-icon mat-list-icon class="admin__articles-icon icon material-icons"
+          >edit</mat-icon
+        >
+        <mat-icon mat-list-icon class="admin__articles-icon icon material-icons"
+          >delete_forever</mat-icon
+        >
       </div>
     </li>
   </ul>

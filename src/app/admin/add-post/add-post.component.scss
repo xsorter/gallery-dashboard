@@ -1,21 +1,20 @@
-mat-form-field{
+mat-form-field {
   display: block;
 }
 
-.admin{
-  &__post{
+.admin {
+  &__post {
     background: #ffffff;
     max-width: 840px;
     padding: 1em;
     margin: 1em 1em 1em 0.5em;
-    &-submit{
-      margin-top: 1em; 
+    &-submit {
+      margin-top: 1em;
     }
   }
-  &__title{
+  &__title {
     font-family: Roboto, Helvetica, sans-serif;
     font-size: 38px;
     text-align: center;
   }
-
 }

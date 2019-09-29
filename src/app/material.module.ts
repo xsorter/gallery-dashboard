@@ -1,6 +1,14 @@
-import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatCardModule } from '@angular/material';
-import { NgModule } from '@angular/core';
-import { MatIconModule } from '@angular/material/icon';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatSidenavModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatCardModule
+} from "@angular/material";
+import { NgModule } from "@angular/core";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   imports: [
@@ -11,7 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatSelectModule,
     MatCardModule,
-    MatIconModule,
+    MatIconModule
   ],
   exports: [
     MatButtonModule,
@@ -21,7 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatInputModule,
     MatSelectModule,
     MatCardModule,
-    MatIconModule,
-  ],
+    MatIconModule
+  ]
 })
-export class SharedMaterialModule { }
+export class SharedMaterialModule {}
