@@ -38,7 +38,6 @@ export class AddPostComponent implements OnInit {
 
   //TODO: refactor
   onSubmit() {
-    //this.postForm.value.coverPath = ['https://est.sport.es/img/lzfoto.gif'];
     this.postForm.value.coverPath = this.uploadService.getUrls();
 
     console.log(this.postForm.value);
